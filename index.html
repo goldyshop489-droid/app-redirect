@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>App Redirect</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    function redirectUser() {
+  <title>Download Our App</title>
 
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-      // Android
-      if (/android/i.test(ua)) {
+  <style>
 
-        window.location.href =
-        "https://play.google.com/store/apps/details?id=com.easybrain.jigsaw.puzzles&hl=en_IN";
-
-      }
-
-      // iPhone / iPad
-      else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-
-        window.location.href =
-        "https://apps.apple.com/us/app/jigsaw-puzzles-puzzle-games/id1324604053";
-
-      }
-
-      // Desktop fallback
-      else {
-
-        document.body.innerHTML =
-        "<h2>Open this QR on mobile device</h2>";
-
-      }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #f5f5f5;
     }
-  </script>
 
-</head>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-<body onload="redirectUser()">
+    h1 {
+      margin-bottom: 10px;
+    }
 
-<h2>Redirecting...</h2>
+    p {
+      color: #555;
+    }
 
-</body>
+    #qrcode {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .link-box {
+      margin-top: 20px;
+      word-break: break-all;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
 </html>
